@@ -1,0 +1,41 @@
+class Solution {
+    public int countStudents(int[] students, int[] sandwiches) {
+        int squareSandwich=0;
+        int circleSandwich=0;
+        
+        for(int n:students)
+        {
+            if(n==0)
+            {
+                circleSandwich++;
+            }
+            else
+            {
+                squareSandwich++;
+            }
+        }
+
+        for(int m:sandwiches)
+        {
+            if(m==0&&circleSandwich==0)
+            {
+                return squareSandwich;
+            }
+            else if(m==1&&squareSandwich==0)
+            {
+                return circleSandwich;
+            }
+            else
+            {
+                if(m==1){
+                    squareSandwich--;
+                }
+                else
+                {
+                    circleSandwich--;
+                }
+            }
+        }
+        return 0;
+    }
+}
