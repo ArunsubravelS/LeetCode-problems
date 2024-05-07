@@ -1,0 +1,16 @@
+long sum=0;
+    int min=arr.get(0);
+    int max=arr.get(0);
+    
+    for(int num:arr){
+    sum+=num;
+    
+    if(num<min)min=num;
+    
+    if(num>max)max=num;
+    }
+    
+    System.out.println((sum-max)+" "+(sum-min));
+
+    }
+
