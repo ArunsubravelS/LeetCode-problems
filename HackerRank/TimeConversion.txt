@@ -22,24 +22,29 @@ class Result {
     public static String timeConversion(String s) {
     // Write your code here
     String result="";
-    if(s.charAt(8)=='P'&&!s.substring(0,2).equals("12"))
+    if(s.charAt(8)=='A')
     {
-        Integer integer=Integer.parseInt(s.substring(0,2))+12;
-        result=integer+s.substring(2, 8);
-    }
-    else if(s.charAt(8)=='A'&&s.charAt(0)=='1')
-    {
+        if(s.charAt(0)=='1')
+        {
+       
         result="00"+s.substring(2,8);
-        
+        }
+        else{
+            result=s.substring(0,8);
+        }
     }
-    else
+    else{
+    if(s.charAt(8)=='P'&&!s.startsWith("12"))
     {
+         Integer integer=Integer.parseInt(s.substring(0,2))+12;
+      result=integer+s.substring(2,8);
+    }
+    else{
         result=s.substring(0,8);
     }
-    
-    
-    return result;
     }
+    return result;
+}
 
 }
 
